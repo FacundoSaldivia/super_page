@@ -1,0 +1,33 @@
+form {
+  padding-top: 30%;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+.container-login {
+  height: 100vh;
+  background-color: #f3f3f3;
+  width: 30vw;
+}
+.wrapper {
+  background-image: url("../../../assets/img/bg-super.png");
+  background-position: left 300px center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: 100% 100%;
+  .title {
+    position: absolute;
+    color: red;
+    right: 8%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+  }
+}
+
+.notificacion {
+  position: absolute;
+  bottom: 40px;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
