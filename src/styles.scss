@@ -26,6 +26,10 @@ body {
     background: transparent;
   }
 }
+.custom .modal-dialog {
+  max-width: 70vw;
+  height: 70vh;
+}
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";

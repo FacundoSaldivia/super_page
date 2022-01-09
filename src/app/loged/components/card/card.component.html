@@ -1,1 +1,8 @@
-<p>card works!</p>
+<div class="card">
+    <img src={{hero.image.url}} class="card-img-top" alt="...">
+    <div class="card-body">
+        <h2 class="card-title">{{hero.name}}</h2>
+        <button class="btn btn-primary" (click)="open()">Ver Info</button>
+        <button class="btn btn-primary">Submit</button>
+    </div>
+</div>

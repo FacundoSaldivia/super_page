@@ -1,0 +1,27 @@
+<div class="wrapper">
+
+    <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="stats">
+            <app-chart [stats]='hero.powerstats'></app-chart>
+        </div>
+        <div class="info">
+            <h1 class="title-name">{{ hero.name }}</h1>
+            <h2>Nombre:{{checkEmpty(hero.biography["full-name"])}}</h2>
+            <h2>Alias:{{checkEmpty(hero.name)}}</h2>
+            <h2>Peso:{{checkEmpty(hero.appearance.weight[1])}}</h2>
+            <h2>Altura:{{checkEmpty(hero.appearance.height[1])}}</h2>
+            <h2>Color de ojos:{{checkEmpty(hero.appearance["eye-color"])}}</h2>
+            <h2>Lugar de trabajo:{{checkEmpty(hero.work.base)}}</h2>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">
+            Close
+        </button>
+    </div>
+</div>

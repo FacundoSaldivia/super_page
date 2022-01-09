@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { NgbAlert, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { MaterialModule } from './material.module';
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

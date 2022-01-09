@@ -1,0 +1,27 @@
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+  .card-img-top {
+    height: 390px;
+    object-fit: cover;
+  }
+  .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    .card-title {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(184, 184, 184);
+      font-size: 20px;
+      text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black,
+        0 -0.07em black;
+    }
+  }
+}
+.modal-dialog {
+  width: 1200px !important;
+  max-width: 1200px !important;
+}

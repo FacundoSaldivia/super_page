@@ -1,1 +1,14 @@
-<p>search works!</p>
+<app-navbar></app-navbar>
+<div class="form-container">
+    <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <input style="width: 800px;" type="search" class="form-control" formControlName="name"
+                placeholder="Search for a Hero">
+        </div>
+        <button type="submit" class="btn btn-primary" style="max-width: 120px;">Submit</button>
+    </form>
+</div>
+
+<div>
+    <app-grid-card [listaSuper]="listaSuper"></app-grid-card>
+</div>
