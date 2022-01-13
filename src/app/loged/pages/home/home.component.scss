@@ -1,0 +1,56 @@
+.empty-container {
+  margin-top: 50px;
+  color: #edf2f4;
+  display: grid;
+  justify-content: center;
+  button {
+    width: 150px;
+    margin: 0 auto;
+  }
+}
+
+.main-container {
+  justify-content: center;
+  text-align: center;
+  border: 5px solid #edf2f43a;
+  color: #edf2f4;
+  margin: 5% 8%;
+  .title {
+    position: relative;
+    top: -20px;
+    width: 300px;
+    margin: 0 auto;
+    background: #2b2d42;
+    font-size: 300%;
+  }
+}
+.chart-container {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+.deadpool {
+  position: absolute;
+  width: 700px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.stats {
+  margin-top: 100px;
+  h2 {
+    font-size: 250%;
+    margin-top: 75px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main-container {
+    margin: 5% 1%;
+  }
+  .chart-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+}

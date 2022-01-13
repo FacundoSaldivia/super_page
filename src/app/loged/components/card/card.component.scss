@@ -1,6 +1,7 @@
 .card {
   width: 300px;
   margin-bottom: 20px;
+  background-color: #8d99ae;
   .card-img-top {
     height: 390px;
     object-fit: cover;
@@ -24,4 +25,11 @@
 .modal-dialog {
   width: 1200px !important;
   max-width: 1200px !important;
+}
+.notificacion {
+  position: fixed;
+  bottom: 40px;
+  right: 50%;
+  transform: translate(50%, 50%);
+  z-index: 1000000;
 }

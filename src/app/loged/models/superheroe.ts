@@ -24,6 +24,7 @@ interface appearance {
 interface biography {
   'full-name': string;
   'place-of-birth': string;
+  alignment: string;
 }
 
 // ● Peso.

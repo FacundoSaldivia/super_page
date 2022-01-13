@@ -1,7 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+} from '@angular/core';
 import { Super } from '../../models/superheroe';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbAlert, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { style } from '@angular/animations';
+import { UpdateList } from '../../services/update-list.service';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-card',
@@ -9,19 +18,54 @@ import { style } from '@angular/animations';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
+  @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert:
+    | NgbAlert
+    | undefined;
   @Input() hero: Super;
 
-  constructor(private modalService: NgbModal) {}
-  verInfo(): void {
-    console.log(this.hero);
+  private _success = new Subject<string>();
+  successMessage = '';
+
+  constructor(
+    private modalService: NgbModal,
+    private updateListService: UpdateList
+  ) {}
+  changeSuccessMessage(message: string) {
+    this._success.next(message);
   }
+
+  addHero(hero: Super) {
+    if (this.updateListService.listHeros.length > 6) {
+      this.changeSuccessMessage('You already have 6 heros on your team...');
+    } else {
+      this.updateListService.pushHero(hero);
+    }
+  }
+
+  removeHero(hero: Super): void {
+    this.updateListService.removeHero(hero);
+    this.updateListService.updateListEvent();
+  }
+
   open() {
     const modalRef = this.modalService.open(NgbdModalContent, {
       windowClass: 'custom',
     });
     modalRef.componentInstance.hero = this.hero;
   }
-  ngOnInit(): void {}
+
+  checkIfAdded(hero: Super): boolean {
+    return this.updateListService.checkHero(hero);
+  }
+
+  ngOnInit(): void {
+    this._success.subscribe((message) => (this.successMessage = message));
+    this._success.pipe(debounceTime(2000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
+  }
 }
 
 @Component({
@@ -39,5 +83,6 @@ export class NgbdModalContent {
       return info;
     }
   }
+
   constructor(public activeModal: NgbActiveModal) {}
 }

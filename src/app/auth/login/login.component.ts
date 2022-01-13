@@ -6,6 +6,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   private _success = new Subject<string>();
   successMessage = '';
@@ -43,6 +44,8 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.form.value).subscribe(
       (e) => {
         console.log(e);
+        localStorage.setItem('toke', e.token);
+        this.router.navigateByUrl('/dashboard/home');
       },
       (error) => {
         this.changeSuccessMessage(error.error.error);

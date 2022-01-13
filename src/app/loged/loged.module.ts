@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartComponent } from './components/chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { GridCardHomeComponent } from './components/grid-card-home/grid-card-home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ChartComponent,
     NgbdModalContent,
     NavbarComponent,
+    GridCardHomeComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     NgChartsModule,
+    NgbModule,
   ],
 })
 export class LogedModule {}

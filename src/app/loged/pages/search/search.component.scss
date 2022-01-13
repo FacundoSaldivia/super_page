@@ -8,3 +8,28 @@
     display: flex;
   }
 }
+.holder-image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .holder-image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 300px !important;
+  }
+  .form-container {
+    margin: 40px 0px;
+  }
+  .btn {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px !important;
+  }
+}

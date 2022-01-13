@@ -2,7 +2,7 @@
 <div class="form-container">
     <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="submit()">
         <div class="form-group">
-            <input style="width: 800px;" type="search" class="form-control" formControlName="name"
+            <input style="width: 60vw;" type="search" class="form-control" formControlName="name"
                 placeholder="Search for a Hero">
         </div>
         <button type="submit" class="btn btn-primary" style="max-width: 120px;">Submit</button>
@@ -11,4 +11,10 @@
 
 <div>
     <app-grid-card [listaSuper]="listaSuper"></app-grid-card>
+</div>
+<div *ngIf='searching'>
+    <img class="holder-image" src="../../../../assets/img/deadpool-search.png" alt="">
+</div>
+<div class="holder-image" *ngIf='!searching && !listaSuper'>
+    <img style="width: 150%;" src="../../../../assets/img/deadpool-search-stop2.png" alt="">
 </div>

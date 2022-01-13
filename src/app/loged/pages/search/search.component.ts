@@ -12,20 +12,20 @@ export class SearchComponent implements OnInit {
   constructor(private superService: SuperHeroService) {}
 
   listaSuper: Super[] = [];
+  searching: boolean = true;
 
   searchForm: FormGroup = new FormGroup({
     name: new FormControl(''),
   });
 
   ngOnInit(): void {
-    this.searchByName('flash');
+    // this.searchByName('flash');
   }
   searchByName(name: string): void {
     this.superService.getResult(name).subscribe(
       (res) => {
-        console.log(name);
-        console.log(res);
         this.listaSuper = res.results;
+        this.searching = false;
       },
       (error) => {
         console.log(error);

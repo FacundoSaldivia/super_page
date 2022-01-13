@@ -2,7 +2,13 @@
     <img src={{hero.image.url}} class="card-img-top" alt="...">
     <div class="card-body">
         <h2 class="card-title">{{hero.name}}</h2>
-        <button class="btn btn-primary" (click)="open()">Ver Info</button>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-info" (click)="open()">Stats</button>
+        <button *ngIf='!checkIfAdded(hero)' class="btn btn-primary" (click)='addHero(hero)'>Add</button>
+        <button *ngIf='checkIfAdded(hero)' class="btn btn-danger" (click)='removeHero(hero)'>Remove</button>
+
     </div>
 </div>
+<ngb-alert class="notificacion" #selfClosingAlert *ngIf="successMessage" type="danger" (closed)="successMessage = ''">{{
+    successMessage
+    }}
+</ngb-alert>

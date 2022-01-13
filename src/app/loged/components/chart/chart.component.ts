@@ -17,6 +17,9 @@ export class ChartComponent implements OnInit {
   // Radar
   public radarChartOptions: ChartConfiguration['options'] = {
     responsive: true,
+    borderColor: '#edf2f4',
+    backgroundColor: '#edf2f43a',
+    color: 'green',
     plugins: {
       legend: {
         display: false,
@@ -49,7 +52,14 @@ export class ChartComponent implements OnInit {
 
   public radarChartData: ChartData<'radar'> = {
     labels: this.radarChartLabels,
-    datasets: [{ data: this.statsNumber, label: 'Stats', tension: 0.09 }],
+    datasets: [
+      {
+        data: this.statsNumber,
+        label: 'Stats',
+        tension: 0.05,
+        pointBackgroundColor: 'black',
+      },
+    ],
   };
   public radarChartType: ChartType = 'radar';
 

@@ -1,4 +1,6 @@
 .modal-body {
+  color: aliceblue;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
@@ -10,6 +12,31 @@
     }
   }
 }
+.wrapper {
+  background-color: #2b2d42;
+}
 .modal-dialog {
   width: 1200px !important;
+}
+@media screen and (max-width: 1000px) {
+  .modal-body {
+    grid-template-columns: 1fr;
+    .stats {
+      width: 60vw;
+      margin: 0 auto;
+    }
+    .info {
+      .title-name {
+        padding: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .modal-body {
+    .stats {
+      width: 100%;
+      margin: 0;
+    }
+  }
 }

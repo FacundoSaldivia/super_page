@@ -14,4 +14,8 @@ export class SuperHeroService {
   getResult(name: string): Observable<result> {
     return this.http.get<result>(`${this.url}search/${name}`);
   }
+
+  getHero(id: string): Observable<Super> {
+    return this.http.get<Super>(`${this.url}${id}`);
+  }
 }

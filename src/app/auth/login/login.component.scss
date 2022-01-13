@@ -1,21 +1,24 @@
 form {
-  padding-top: 30%;
+  padding-top: 50px;
   display: grid;
   justify-content: center;
   width: 100%;
+  gap: 10px;
+  button {
+    margin-top: 40px;
+  }
 }
 .container-login {
-  height: 100vh;
+  height: 400px;
   background-color: #f3f3f3;
-  width: 30vw;
+  width: 300px;
 }
 .wrapper {
-  background-image: url("../../../assets/img/bg-super.png");
-  background-position: left 300px center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: #2b2d42 !important;
   height: 100vh;
-  background-size: 100% 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
   .title {
     position: absolute;
     color: red;
@@ -30,4 +33,50 @@ form {
   bottom: 40px;
   right: 50%;
   transform: translate(50%, 50%);
+}
+.deadpool {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+}
+.deadpool2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  img:first-child {
+    width: 400px;
+  }
+  img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    display: grid;
+    justify-content: center;
+    align-content: flex-start;
+    .container-login {
+      margin-top: 100px;
+    }
+  }
+  .deadpool {
+    display: none;
+  }
+  .deadpool2 {
+    position: absolute;
+    img:first-child {
+      position: absolute;
+      right: 100px;
+      bottom: 0;
+      width: 300px;
+    }
+    img:last-child {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 150px;
+    }
+  }
 }

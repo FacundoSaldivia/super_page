@@ -10,6 +10,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #2b2d42 !important;
 }
 
 .green {
@@ -30,6 +31,11 @@ body {
   max-width: 70vw;
   height: 70vh;
 }
-
+@media screen and (max-width: 1000px) {
+  .custom .modal-dialog {
+    max-width: 95vw;
+    width: 95vw !important;
+  }
+}
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
