@@ -1,21 +1,25 @@
 <app-navbar></app-navbar>
-<div class="form-container">
-    <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="submit()">
-        <div class="form-group">
-            <input style="width: 40vw;" type="search" class="form-control" formControlName="name"
-                placeholder="Search for a Hero">
-            <button type="submit" class=""><img src="../../../../assets/img/search.png" alt="" width="32px"></button>
-        </div>
+<div class="wrapper">
 
-    </form>
-</div>
+    <div class="form-container">
+        <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="submit()">
+            <div class="form-group">
+                <input style="width: 40vw;" type="search" class="form-control" formControlName="name"
+                    placeholder="Search for a Hero">
+                <button type="submit" class=""><img src="../../../../assets/img/search.png" alt=""
+                        width="32px"></button>
+            </div>
 
-<div>
-    <app-grid-card [listaSuper]="listaSuper"></app-grid-card>
-</div>
-<div *ngIf='searching'>
-    <img class="holder-image" src="../../../../assets/img/deadpool-search.png" alt="">
-</div>
-<div *ngIf='!searching && !listaSuper'>
-    <img class="holder-image" src="../../../../assets/img/deadpool-search-stop2.png" alt="">
+        </form>
+    </div>
+
+    <div>
+        <app-grid-card [listaSuper]="listaSuper"></app-grid-card>
+    </div>
+    <div *ngIf='searching'>
+        <img class="holder-image" src="../../../../assets/img/deadpool-search.png" alt="">
+    </div>
+    <div *ngIf='!searching && !listaSuper'>
+        <img class="holder-image" src="../../../../assets/img/deadpool-search-stop2.png" alt="">
+    </div>
 </div>

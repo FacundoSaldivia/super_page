@@ -14,13 +14,15 @@
             <button type="submit" class="btn btn-danger">Submit</button>
         </form>
     </div>
+
+    <ngb-alert class="notificacion" #selfClosingAlert *ngIf="successMessage" type="danger"
+        (closed)="successMessage = ''">{{
+        successMessage
+        }}
+    </ngb-alert>
+    <div class='deadpool2'>
+        <img src="../../../assets/img/bubble.png" alt="">
+        <img src="../../../assets/img/deadpool-login2.png" alt="">
+    </div>
+    <img class='deadpool' src="../../../assets/img/deadpool-login.png" alt="">
 </div>
-<ngb-alert class="notificacion" #selfClosingAlert *ngIf="successMessage" type="danger" (closed)="successMessage = ''">{{
-    successMessage
-    }}
-</ngb-alert>
-<div class='deadpool2'>
-    <img src="../../../assets/img/bubble.png" alt="">
-    <img src="../../../assets/img/deadpool-login2.png" alt="">
-</div>
-<img class='deadpool' src="../../../assets/img/deadpool-login.png" alt="">

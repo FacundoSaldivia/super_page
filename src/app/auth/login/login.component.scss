@@ -17,7 +17,7 @@ form {
 }
 .wrapper {
   background: #2b2d42 !important;
-  height: 100vh;
+  height: 100%;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -54,8 +54,10 @@ form {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1104px) {
   .wrapper {
+    position: relative;
+    min-height: 700px;
     display: grid;
     justify-content: center;
     align-content: flex-start;
