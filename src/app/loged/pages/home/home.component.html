@@ -1,18 +1,28 @@
 <app-navbar></app-navbar>
 <div *ngIf='heroArray.length == 0' class="empty-container">
+
     <h1>It looks like you dont have any heros on your team...</h1>
-    <button type="button" [routerLink]="['/dashboard/search']" class="btn btn-primary">Search for heros</button>
+
+    <button type="button" [routerLink]="['/dashboard/search']" class="btn btn-danger">Search for heros</button>
     <img class="deadpool" src="../../../../assets/img/deadpool-home-2.png" alt="">
 </div>
 <div *ngIf='heroArray.length > 0' class="main-container">
     <h1 class="title">Your Team</h1>
     <app-grid-card-home [listaSuper]="heroArray"></app-grid-card-home>
     <div class="stats">
-        <h2>Team's statistics </h2>
+        <div class="stats-title">
+            <h2>Team's statistics </h2>
+            <hr>
+        </div>
         <div class="chart-container" *ngIf='!chartLoading'>
+            <h3>Power stats</h3>
             <app-chart class="chart" [stats]='heroStats'></app-chart>
         </div>
-
+        <div class="average-stats">
+            <h3>Strenght of the team: {{greatestStat}} </h3>
+            <h4>Average height: {{averageHeight}}cm</h4>
+            <h4>Average weight: {{averageWeight}}kg</h4>
+        </div>
         <div class="chart-container" *ngIf='chartLoading'>
             <app-chart class="chart" [stats]='loadingStats'></app-chart>
         </div>

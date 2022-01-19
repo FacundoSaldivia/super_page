@@ -37,5 +37,10 @@ body {
     width: 95vw !important;
   }
 }
+
+@font-face {
+  src: url(assets/fonts/BADABB__.TTF);
+  font-family: Comics;
+}
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";

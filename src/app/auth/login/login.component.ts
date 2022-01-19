@@ -21,10 +21,6 @@ export class LoginComponent implements OnInit {
   @ViewChild('selfClosingAlert', { static: false }) selfClosingAlert:
     | NgbAlert
     | undefined;
-  userAux: user = {
-    email: 'challenge@alkemy.org',
-    password: 'react',
-  };
 
   form: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -44,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.form.value).subscribe(
       (e) => {
         console.log(e);
-        localStorage.setItem('toke', e.token);
+        localStorage.setItem('token', e.token);
         this.router.navigateByUrl('/dashboard/home');
       },
       (error) => {

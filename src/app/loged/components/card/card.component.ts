@@ -35,8 +35,15 @@ export class CardComponent implements OnInit {
   }
 
   addHero(hero: Super) {
-    if (this.updateListService.listHeros.length > 6) {
-      this.changeSuccessMessage('You already have 6 heros on your team...');
+    console.log(this.updateListService.listHeros);
+    if (this.updateListService.listHeros.length >= 6) {
+      this.changeSuccessMessage(
+        'You already have 6 characters on your team...'
+      );
+    } else if (!this.updateListService.check(hero)) {
+      this.changeSuccessMessage(
+        `You already have 3 ${hero.biography.alignment} characters `
+      );
     } else {
       this.updateListService.pushHero(hero);
     }

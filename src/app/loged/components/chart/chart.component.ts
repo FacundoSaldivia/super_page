@@ -84,8 +84,8 @@ export class ChartComponent implements OnInit {
     console.log(event, active);
   }
   getStats(): void {
-    this.statsNumber.push(this.stats.durability);
     this.statsNumber.push(this.stats.combat);
+    this.statsNumber.push(this.stats.durability);
     this.statsNumber.push(this.stats.intelligence);
     this.statsNumber.push(this.stats.power);
     this.statsNumber.push(this.stats.speed);

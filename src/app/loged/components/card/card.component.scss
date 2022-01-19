@@ -12,13 +12,29 @@
     gap: 20px;
     .card-title {
       position: absolute;
-      top: 75%;
+      top: 78%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: rgb(184, 184, 184);
-      font-size: 20px;
-      text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black,
-        0 -0.07em black;
+      color: rgb(0, 0, 0);
+      font-size: 2em;
+      font-family: Comics;
+      max-width: 100%;
+      padding: 0 5px;
+      text-align: center;
+      background: #ddd;
+      border: 1px solid #222;
+      box-shadow: 3px 3px 0 #222;
+    }
+    .alignment {
+      font-family: Comics;
+      position: absolute;
+      top: 1%;
+      right: 3%;
+      padding: 0 5px;
+      background: #ddd;
+      border: 1px solid #222;
+      box-shadow: 3px 3px 0 #222;
+      color: rgb(0, 0, 0);
     }
   }
 }

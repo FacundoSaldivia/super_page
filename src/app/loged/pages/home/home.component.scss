@@ -1,8 +1,15 @@
 .empty-container {
+  font-family: Comics;
   margin-top: 50px;
   color: #edf2f4;
   display: grid;
   justify-content: center;
+
+  h1 {
+    font-family: Comics;
+    font-size: 3em;
+    margin: 50px 0px 75px;
+  }
   button {
     width: 150px;
     margin: 0 auto;
@@ -13,6 +20,7 @@
   justify-content: center;
   text-align: center;
   border: 5px solid #edf2f43a;
+  border-radius: 5px;
   color: #edf2f4;
   margin: 5% 8%;
   .title {
@@ -21,11 +29,12 @@
     width: 300px;
     margin: 0 auto;
     background: #2b2d42;
-    font-size: 300%;
+    font-size: 5em;
+    font-family: Comics;
   }
 }
 .chart-container {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   padding-bottom: 100px;
 }
@@ -38,19 +47,89 @@
 
 .stats {
   margin-top: 100px;
-  h2 {
-    font-size: 250%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .stats-title {
+    grid-column: span 3;
     margin-top: 75px;
     margin-bottom: 100px;
+    h2 {
+      font-family: Comics;
+      font-size: 3em;
+    }
+    hr {
+      border: 3px solid #edf2f4;
+      width: 30%;
+      border-radius: 5px;
+    }
+  }
+
+  .chart-container {
+    grid-column: span 2;
+    h3 {
+      font-family: Comics;
+      text-align: left;
+      font-size: 2em;
+    }
+  }
+  .average-stats {
+    margin-right: 0%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    border-radius: 15px;
+    h3,
+    h4 {
+      font-family: Comics;
+      font-size: 2.5em;
+      text-align: left;
+      margin-bottom: 100px;
+    }
   }
 }
 @media screen and (max-width: 1000px) {
   .main-container {
-    margin: 5% 1%;
+    margin: 10% 1% 1%;
   }
   .chart-container {
-    width: 100%;
+    width: 95vw;
     margin: 0 auto;
     padding-bottom: 100px;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .stats-title {
+      grid-column: span 1;
+    }
+
+    .chart-container {
+      grid-column: span 1;
+      h3 {
+        text-align: center;
+      }
+    }
+    .average-stats {
+      margin: 10px;
+      h3,
+      h4 {
+        text-align: center;
+        margin-bottom: 90px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .empty-container {
+    h1 {
+      text-align: center;
+      font-family: Comics;
+      font-size: 3em;
+      margin: 50px 20px 75px;
+    }
+    img {
+      width: 100vw;
+      max-width: 400px;
+    }
   }
 }

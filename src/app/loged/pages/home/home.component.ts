@@ -33,6 +33,9 @@ export class HomeComponent implements OnInit {
     durability: 0,
     combat: 0,
   };
+  greatestStat: string = '';
+  averageHeight: number = 0;
+  averageWeight: number = 0;
 
   constructor(
     private superService: SuperHeroService,
@@ -44,6 +47,8 @@ export class HomeComponent implements OnInit {
   }
 
   getHeros(heros: Super[]): void {
+    this.averageWeight = 0;
+    this.averageHeight = 0;
     heros.forEach((e: Super) => {
       this.heroStats.combat += this.checkIfNaN(e.powerstats.combat);
       this.heroStats.power += this.checkIfNaN(e.powerstats.power);
@@ -51,8 +56,13 @@ export class HomeComponent implements OnInit {
       this.heroStats.speed += this.checkIfNaN(e.powerstats.speed);
       this.heroStats.strength += this.checkIfNaN(e.powerstats.strength);
       this.heroStats.durability += this.checkIfNaN(e.powerstats.durability);
+      this.averageHeight += parseInt(e.appearance.height[1]);
+      this.averageWeight += parseInt(e.appearance.weight[1]);
     });
     this.updateChart(heros.length);
+    this.setGreatestStrength(this.heroStats);
+    this.averageHeight = Math.floor(this.averageHeight / heros.length);
+    this.averageWeight = Math.floor(this.averageWeight / heros.length);
   }
 
   updateChart(div: number): void {
@@ -82,10 +92,8 @@ export class HomeComponent implements OnInit {
   }
   updateList(): void {
     this.chartLoading = true;
-
     this.setChart();
     this.heroArray = this.updateListService.listHeros;
-
     this.getHeros(this.heroArray);
     if (this.heroArray.length == 0) {
       this.heroArray = [];
@@ -98,5 +106,36 @@ export class HomeComponent implements OnInit {
     } else {
       return stat;
     }
+  }
+
+  setGreatestStrength(stats: powerstats): void {
+    console.log(stats);
+    let auxStrength: number = 0;
+    let auxNameStrength: string = '';
+    if (stats.combat > auxStrength) {
+      auxStrength = stats.combat;
+      auxNameStrength = 'Combat';
+    }
+    if (stats.durability > auxStrength) {
+      auxStrength = stats.durability;
+      auxNameStrength = 'Durability';
+    }
+    if (stats.intelligence > auxStrength) {
+      auxStrength = stats.intelligence;
+      auxNameStrength = 'Intelligence';
+    }
+    if (stats.power > auxStrength) {
+      auxStrength = stats.power;
+      auxNameStrength = 'Power';
+    }
+    if (stats.speed > auxStrength) {
+      auxStrength = stats.speed;
+      auxNameStrength = 'Speed';
+    }
+    if (stats.strength > auxStrength) {
+      auxStrength = stats.strength;
+      auxNameStrength = 'Strength';
+    }
+    this.greatestStat = auxNameStrength;
   }
 }

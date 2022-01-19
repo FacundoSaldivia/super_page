@@ -46,4 +46,19 @@ export class UpdateList {
       return false;
     }
   }
+
+  check(hero: Super): boolean {
+    let c = 0;
+    let heroAlignment = hero.biography.alignment;
+    this.listHeros.forEach((e) => {
+      if (e.biography.alignment == heroAlignment) {
+        c += 1;
+      }
+    });
+    if (c <= 2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

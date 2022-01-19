@@ -1,15 +1,25 @@
+.modal-header {
+  .title-name {
+    text-align: center;
+    width: 100%;
+    font-family: Comics;
+    font-size: 3em;
+    letter-spacing: 5px;
+    margin: 0 !important;
+
+    color: white;
+    padding-left: 45px;
+  }
+}
+
 .modal-body {
   color: aliceblue;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
   align-items: center;
   .info {
     text-align: center;
-    .title-name {
-      padding-bottom: 100px;
-    }
   }
 }
 .wrapper {
