@@ -5,6 +5,7 @@
 
     <button type="button" [routerLink]="['/dashboard/search']" class="btn btn-danger">Search for heros</button>
     <img class="deadpool" src="assets/img/deadpool-home-2.png" alt="">
+    <app-sign-off-button class="logout"></app-sign-off-button>
 </div>
 <div *ngIf='heroArray.length > 0' class="main-container">
     <h1 class="title">Your Team</h1>
@@ -27,4 +28,8 @@
             <app-chart class="chart" [stats]='loadingStats'></app-chart>
         </div>
     </div>
+</div>
+
+<div class="logout-2-container">
+    <app-sign-off-button class="logout-2"></app-sign-off-button>
 </div>

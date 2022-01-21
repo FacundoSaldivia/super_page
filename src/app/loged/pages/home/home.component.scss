@@ -86,6 +86,19 @@
     }
   }
 }
+.logout {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.logout-2-container {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  .logout-2 {
+    padding: 20px 0;
+  }
+}
 @media screen and (max-width: 1000px) {
   .main-container {
     margin: 10% 1% 1%;
@@ -131,5 +144,14 @@
       width: 100vw;
       max-width: 400px;
     }
+  }
+  .logout {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin: 20vh auto;
+  }
+  .logout-2 {
+    margin: 20px 50vh;
   }
 }
