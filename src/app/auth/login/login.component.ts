@@ -1,12 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { user } from '../models/user-model';
 import { LoginService } from '../services/login.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +22,10 @@ export class LoginComponent implements OnInit {
     | undefined;
 
   form: FormGroup = new FormGroup({
-    email: new FormControl(''),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+    ]),
     password: new FormControl(''),
   });
 

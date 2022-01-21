@@ -15,6 +15,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GridCardHomeComponent } from './components/grid-card-home/grid-card-home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SignOffButtonComponent } from './components/sign-off-button/sign-off-button.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbdModalContent,
     NavbarComponent,
     GridCardHomeComponent,
+    SignOffButtonComponent,
   ],
   imports: [
     CommonModule,

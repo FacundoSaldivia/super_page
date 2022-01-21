@@ -6,9 +6,7 @@
     font-size: 3em;
     letter-spacing: 5px;
     margin: 0 !important;
-
     color: white;
-    padding-left: 45px;
   }
 }
 
@@ -20,6 +18,10 @@
   align-items: center;
   .info {
     text-align: center;
+    h2 {
+      font-family: Comics;
+      font-size: 2em;
+    }
   }
 }
 .wrapper {
